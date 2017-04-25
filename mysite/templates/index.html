@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Represently</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css<!-- ">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> 
+		<link rel="stylesheet" href="{% static 'css/represent.css' %}">
+	</head>
+	<body>
+		<div class="site-wrapper">
+		  <div class="site-wrapper-inner">
+		    <div class="cover-container">
+		      <div class="masthead clearfix">
+		        <div class="inner">
+		        </div>
+		      </div>
+
+		      <div class="inner cover">
+		        <h1 class="cover-heading">Represently</h1>
+		        <p class="lead">Your congressmen is voting on important issues that you have no 
+		        idea about. Well we at Represently believe it's time to change that!
+		        </p>
+		        <form action="/" method="POST">
+		        {% csrf_token %}
+		        {{ form }}
+		        <input type="submit" value="Submit"/>
+		    	</form>
+		      </div>
+
+		      <div class="mastfoot">
+		        <div class="inner">
+		          <p><a href=
+		          "http://www.represently.com/"
+		          target="_blank"><small>Made for Represenlty</small></a></p>          
+		          <p>© 2017 Brandon Obas ~ <a href=
+		          "https://github.com/OBrandon">Github</a></p>
+		        </div>
+		      </div>
+		    </div>
+		</div>
+		</div>
+	</body>
+</html>
+

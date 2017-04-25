@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+<html lang="en">
+<!-- <head>
+  <title>Represently</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/represent.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head> -->
+<body>
+
+<div class="container-fluid">
+  <h2>{{congress.name}}</h2>
+  <h4>
+   	{% if congress.party|length < 1 %}
+  		Party : Not Available
+  	{% else %}
+  		Party : {{congress.party}}
+  	{% endif %}
+  </h4>
+  <h4>
+  	{% if congress.role|length < 1 %}
+  		Role : Not Available
+  	{% else %}
+  		Role : {{congress.role}}
+  	{% endif %}
+  </h4>
+  <h4>
+  	{% if congress.twitter_id|length < 1 %}
+  		Twitter : Not Available
+  	{% else %}
+  		Twitter : {{congress.twitter_id}}
+  	{% endif %}
+  </h4>
+  <p>Know what your congressmen is voting on and do something about it!</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Bill Name</th>
+        <th>Vote</th>
+      </tr>
+    </thead>
+    <tbody>
+	  {% for name, position in newDict.items %}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{position}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
+
+{% endblock %}
